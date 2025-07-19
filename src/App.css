@@ -1,0 +1,512 @@
+/* Import Roboto font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+body {
+  font-family: 'Roboto', Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 20px;
+  overflow-x: hidden;
+}
+
+.container {
+  max-width: 99vw;
+  margin: auto;
+  background: #fff;
+  padding: 20px;
+  border-radius: 16px;
+  box-sizing: border-box;
+  box-shadow: 0 0 14px rgba(0, 0, 0, 0.09);
+}
+
+h1 {
+  text-align: center;
+  margin: 0;
+  font-size: 2.6rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+h1:hover {
+  color: rgb(161, 227, 249);
+  background-color: #f0f8ff;
+  transition: all 0.3s ease;
+  transform: scale(1.05);
+}
+
+.tagline {
+  text-align: center;
+  font-size: 1.2em;
+  color: #555;
+  margin: 10px 0 30px;
+}
+
+.flex-container {
+  display: flex;
+  gap: 28px;
+  flex-wrap: nowrap;
+  min-height: 600px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+/* --- INPUT BOX --- */
+.input-section {
+  flex: 0 0 340px;
+  min-width: 270px;
+  max-width: 360px;
+  align-self: flex-start;
+  margin: 0;
+  background: #fafafa;
+  border: 1.5px solid #ededed;
+  box-shadow: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 30px 25px 30px 25px;
+  margin-top: 0;
+}
+
+.input-section label {
+  margin: 16px 0 6px 0;
+  font-weight: bold;
+  font-size: 1.08em;
+}
+
+.input-section label:first-child {
+  margin-top: 0;
+}
+
+.input-section input,
+.input-section select {
+  width: 100%;
+  padding: 11px 14px;
+  margin-bottom: 14px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 1em;
+  background: #fff;
+  transition: border 0.2s, box-shadow 0.2s;
+}
+
+.input-section input:focus,
+.input-section select:focus {
+  outline: none;
+  border: 1.5px solid #b1e5fc;
+  box-shadow: 0 0 4px #b1e5fc33;
+}
+
+.input-section button {
+  display: block;
+  width: 100%;
+  padding: 14px 0;
+  background-color: #b1e5fc;
+  color: #222;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1.09em;
+  margin-top: 18px;
+  transition: background 0.2s, color 0.2s, transform 0.2s;
+  box-shadow: none;
+}
+
+.input-section button:hover {
+  background-color: #a1dcfa;
+  color: #000;
+  transform: scale(1.02);
+}
+
+/* Output Section */
+.output-section {
+  flex: 1 1 0%;
+  min-width: 0;
+  min-height: 600px;
+  height: 700px;
+  max-height: 90vh;
+  justify-content: flex-start;
+  position: relative;
+  overflow: visible;
+  border: 1.5px solid #ededed;
+  background: #fafafa;
+  border-radius: 14px;
+  padding: 30px 24px 30px 24px;
+  box-shadow: none;
+  box-sizing: border-box;
+  width: 0;
+}
+
+.output-algo-header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-bottom: 10px;
+  gap: 12px;
+}
+
+.output-algo-btn {
+  background: rgb(161, 227, 249);
+  color: #1a1a1a;
+  border: none;
+  border-radius: 18px;
+  padding: 7px 18px;
+  font-weight: bold;
+  font-size: 1em;
+  pointer-events: none;
+  box-shadow: 0 1px 4px rgba(161,227,249,0.10);
+  margin-right: 0;
+  margin-left: auto;
+  transition: background 0.3s, color 0.3s;
+}
+
+.csv-download-btn {
+  background: #fff;
+  border: none;
+  border-radius: 50%;
+  padding: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #1a1a1a;
+  box-shadow: 0 0 8px rgba(161,227,249,0.15);
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s, box-shadow 0.3s;
+  font-size: 1.05em;
+}
+
+.csv-download-btn:hover,
+.gantt-download-btn:hover {
+  background: rgb(161, 227, 249);
+  color: #000;
+  box-shadow: 0 2px 12px rgba(161,227,249,0.28);
+  transform: scale(1.12);
+}
+
+/* ---- GANTT CHART STYLES (REDUCED BOX SIZE) ---- */
+.gantt-chart-container {
+  border: 2px solid #ddd;
+  border-radius: 15px;
+  padding: 4px 4px 4px 6px;
+  margin-bottom: 30px;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  min-height: 55px;
+  min-width: 120px;
+  max-width: 100%;
+  position: relative;
+  overflow-x: auto;
+}
+
+.gantt-label-top-left {
+  position: absolute;
+  top: 4px;
+  left: 8px;
+  color: #666;
+  font-size: 0.96em;
+  font-weight: bold;  /* Make it bold */
+  font-family: 'Barlow Condensed', Arial, sans-serif;
+  opacity: 0.93;
+  letter-spacing: 1px;
+  display: flex;
+  align-items: center;
+  z-index: 2;
+}
+
+.gantt-download-btn {
+  background: #fff;
+  border-radius: 50%;
+  border: 1px solid #eee;
+  margin-left: 7px;
+  padding: 0px 3px;
+  cursor: pointer;
+  color: #1a1a1a;
+  transition: background 0.3s, color 0.3s, box-shadow 0.3s;
+  font-size: 0.95em;
+  box-shadow: 0 0 6px rgba(161,227,249,0.09);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gantt-chart-wrapper {
+  margin-top: 11px;
+}
+
+.gantt-chart {
+  display: flex;
+  gap: 0;
+  text-align: center;
+  position: relative;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.gantt-block {
+  position: relative;
+  min-width: 38px;
+  min-height: 28px;
+  margin: 0;
+  padding: 10px 4px;
+  background: rgb(161, 227, 249);
+  color: #1a1a1a;
+  font-weight: bold;
+  border-radius: 0;
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.3s ease;
+  font-size: 0.98em;
+  box-sizing: border-box;
+  z-index: 2;
+}
+
+.gantt-block + .gantt-block {
+  border-left: 2px solid #fff;
+}
+.gantt-block:hover {
+  background-color: rgb(130, 210, 245);
+  color: #000;
+  transform: scale(1.05);
+}
+.gantt-process {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 0.97em;
+}
+.time-start {
+  position: absolute;
+  bottom: -16px;
+  left: 0;
+  font-weight: normal;
+  font-size: 0.92em;
+}
+.time-end {
+  position: absolute;
+  bottom: -16px;
+  right: 0;
+  font-weight: normal;
+  font-size: 0.92em;
+}
+
+/* -----------------------------
+   TABLE STYLES
+------------------------------ */
+.results-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  margin-top: 0px;
+  margin-bottom: 0;
+  background: transparent;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background: #fff;
+  table-layout: auto;
+}
+
+th,
+td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+  white-space: nowrap;
+}
+
+th {
+  background: rgb(161, 227, 249);
+  color: #1a1a1a;
+}
+
+th:hover {
+  background-color: rgb(130, 210, 245);
+  color: #000;
+  transform: scale(1.05);
+  transition: all 0.3s ease;
+}
+
+tr:last-child {
+  font-weight: bold;
+  background-color: #f0f8ff;
+}
+
+.footer {
+  text-align: center;
+  margin-top: 20px;
+  padding: 10px;
+  background: #f4f4f4;
+  color: #333;
+  font-size: 0.9em;
+  border-top: 1px solid #ddd;
+}
+
+/* -----------------------------
+   MEDIA QUERIES 
+------------------------------ */
+@media screen and (max-width: 1450px) {
+  .container {
+    max-width: 100vw;
+    padding: 7px;
+  }
+  .flex-container {
+    gap: 12px;
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .flex-container {
+    gap: 8px;
+  }
+  .input-section {
+    min-width: 180px;
+    max-width: 220px;
+    padding: 15px 7px 15px 7px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .flex-container {
+    flex-direction: column;
+    align-items: stretch;
+    min-height: 900px;
+  }
+  .output-section {
+    min-height: 500px;
+    height: 500px;
+  }
+  .input-section {
+    margin: 0;
+    align-self: stretch;
+    justify-content: flex-start;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .flex-container {
+    flex-direction: column;
+    align-items: stretch;
+    min-height: 700px;
+    gap: 10px;
+  }
+
+  .input-section,
+  .output-section {
+    flex: 1 100%;
+    min-width: 0;
+    max-width: 100%;
+    padding: 12px 6px 12px 6px;
+  }
+
+  body {
+    padding: 10px;
+  }
+
+  .container {
+    padding: 10px;
+  }
+
+  h1 {
+    font-size: 1.5em;
+  }
+
+  .tagline {
+    font-size: 1em;
+  }
+
+  input,
+  select,
+  button {
+    font-size: 14px;
+  }
+
+  .gantt-chart {
+    flex-direction: column;
+  }
+
+  .gantt-block {
+    margin-bottom: 8px;
+    min-width: 32px;
+    min-height: 20px;
+    padding: 6px 2px;
+    font-size: 0.89em;
+  }
+
+  table {
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 580px) {
+  .gantt-block {
+    min-width: 25px;
+    font-size: 0.84em;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .container {
+    width: 100%;
+    margin: 0;
+    padding: 5px;
+  }
+
+  h1 {
+    font-size: 1.2em;
+  }
+
+  .tagline {
+    font-size: 0.9em;
+  }
+
+  input,
+  select,
+  button {
+    font-size: 12px;
+    padding: 6px;
+  }
+
+  th,
+  td {
+    padding: 4px;
+  }
+
+  .footer {
+    font-size: 0.7em;
+  }
+
+  .gantt-block {
+    min-width: 18px;
+    font-size: 0.8em;
+    padding: 5px 1px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  body {
+    padding: 5px;
+  }
+
+  h1 {
+    font-size: 1em;
+  }
+
+  .tagline {
+    font-size: 0.8em;
+  }
+
+  input,
+  select,
+  button {
+    font-size: 10px;
+    padding: 4px;
+  }
+}
