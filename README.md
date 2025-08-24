@@ -11,7 +11,9 @@ It helps users understand how scheduling strategies affect process execution, tu
 
 - 📋 Supports multiple scheduling algorithms:  
   - First Come First Serve (FCFS)  
-  - (Extendable to **SJF, Round Robin, Priority**, etc.)  
+  - Shortest Job First
+  - Round Robin
+  - Priority Scheduling
 - 📈 Gantt chart visualization for process scheduling.  
 - 📊 Tabular display of:  
   - Arrival Time  
@@ -20,7 +22,7 @@ It helps users understand how scheduling strategies affect process execution, tu
   - Turnaround Time  
   - Waiting Time  
   - Response Time  
-- 📥 Downloadable chart export.  
+- 📥 Downloadable chart export and Gantt Chart  
 
 ---
 
