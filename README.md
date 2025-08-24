@@ -24,21 +24,6 @@ It helps users understand how scheduling strategies affect process execution, tu
 
 ---
 
-## 🖼️ Screenshots  
-
-### Home Page  
-![Home Page](assets/homepage.png)  
-
-### Input Form  
-![Input Form](assets/input-form.png)  
-
-### Gantt Chart Visualization  
-![Gantt Chart](assets/gantt-chart.png)  
-
-*(Add your screenshots inside an `assets` folder and update the paths above)*  
-
----
-
 ## 🧰 Tech Stack  
 
 - **Frontend:** React.js  
